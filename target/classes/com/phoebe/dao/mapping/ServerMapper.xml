@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.phoebe.dao.ServerDao" >
+  <resultMap id="BaseResultMap" type="com.phoebe.model.Server" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="alias" property="alias" jdbcType="VARCHAR" />
+    <result column="ip" property="ip" jdbcType="VARCHAR" />
+    <result column="host" property="host" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="correspond_id" property="correspond_id" jdbcType="INTEGER" />
+    <result column="os" property="os" jdbcType="VARCHAR" />
+    <result column="cpu" property="cpu" jdbcType="INTEGER" />
+    <result column="mem" property="mem" jdbcType="INTEGER" />
+    <result column="disk" property="disk" jdbcType="INTEGER" />
+    <result column="usage" property="usage" jdbcType="VARCHAR" />
+    <result column="dc" property="dc" jdbcType="VARCHAR" />
+    <result column="update_time" property="update_time" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, alias, ip, host, type, correspond_id, os, cpu, mem, disk, usage, dc, update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from server
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select * from server
+  </select>
+  <delete id="delete" parameterType="java.lang.Integer" >
+    delete from server
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.phoebe.model.Server" >
+    insert into server (id, name, alias, 
+      ip, host, type, correspond_id, 
+      os, cpu, mem, disk, 
+      usage, dc, update_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{alias,jdbcType=VARCHAR}, 
+      #{ip,jdbcType=VARCHAR}, #{host,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{correspond_id,jdbcType=INTEGER}, 
+      #{os,jdbcType=VARCHAR}, #{cpu,jdbcType=INTEGER}, #{mem,jdbcType=INTEGER}, #{disk,jdbcType=INTEGER}, 
+      #{usage,jdbcType=VARCHAR}, #{dc,jdbcType=VARCHAR}, #{update_time,jdbcType=DATE}
+      )
+  </insert>
+  <update id="update" parameterType="com.phoebe.model.Server" >
+    update server
+    set name = #{name,jdbcType=VARCHAR},
+      alias = #{alias,jdbcType=VARCHAR},
+      ip = #{ip,jdbcType=VARCHAR},
+      host = #{host,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      correspond_id = #{correspond_id,jdbcType=INTEGER},
+      os = #{os,jdbcType=VARCHAR},
+      cpu = #{cpu,jdbcType=INTEGER},
+      mem = #{mem,jdbcType=INTEGER},
+      disk = #{disk,jdbcType=INTEGER},
+      usage = #{usage,jdbcType=VARCHAR},
+      dc = #{dc,jdbcType=VARCHAR},
+      update_time = #{update_time,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

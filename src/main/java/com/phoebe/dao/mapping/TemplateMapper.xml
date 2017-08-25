@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.phoebe.dao.TemplateDao" >
+  <resultMap id="BaseResultMap" type="com.phoebe.model.Template" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="controller_server_id" property="controller_server_id" jdbcType="INTEGER" />
+    <result column="subscribe_staff_id" property="subscribe_staff_id" jdbcType="VARCHAR" />
+    <result column="update_time" property="update_time" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, controller_server_id, subscribe_staff_id, update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from template
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from template
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.phoebe.model.Template" >
+    insert into template (id, controller_server_id, subscribe_staff_id, 
+      update_time)
+    values (#{id,jdbcType=INTEGER}, #{controller_server_id,jdbcType=INTEGER}, #{subscribe_staff_id,jdbcType=VARCHAR}, 
+      #{update_time,jdbcType=DATE})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.phoebe.model.Template" >
+    update template
+    set controller_server_id = #{controller_server_id,jdbcType=INTEGER},
+      subscribe_staff_id = #{subscribe_staff_id,jdbcType=VARCHAR},
+      update_time = #{update_time,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

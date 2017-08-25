@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - ltc@localhost" uuid="b62fe0e9-827e-416d-a3f8-087cc6311a10">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-scope>ltc:</introspection-scope>
+      <resolve-scope>ltc:</resolve-scope>
+    </data-source>
+  </component>
+</project>

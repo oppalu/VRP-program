@@ -1,0 +1,34 @@
+CREATE TABLE IF NOT EXISTS `template` (
+    `id` INT UNSIGNED AUTO_INCREMENT,
+    `controller_server_id` INT UNSIGNED NOT NULL,
+    `subscribe_staff_id` VARCHAR(10) NOT NULL,
+    `update_time` DATE,
+    PRIMARY KEY(`id`)
+);
+
+CREATE TABLE IF NOT EXISTS `server` (
+    `id` INT UNSIGNED AUTO_INCREMENT,
+	`name` VARCHAR(256) NOT NULL,
+	`alias` VARCHAR(64),
+	`ip` VARCHAR(32) NOT NULL,
+	`host` VARCHAR(32),
+	`type` VARCHAR(32),
+	`correspond_id` INT UNSIGNED,
+	`os` VARCHAR(32),
+	`cpu` INT UNSIGNED,
+	`mem` INT UNSIGNED,
+	`disk` INT UNSIGNED,
+	`usage` VARCHAR(128),
+	`dc` VARCHAR(64),
+    `update_time` DATE,
+    PRIMARY KEY(`id`)
+);
+
+CREATE TABLE IF NOT EXISTS `server_list` (
+    `id` INT UNSIGNED AUTO_INCREMENT,
+	`type` VARCHAR(32),
+	`server_id` INT UNSIGNED,
+	`template_id` INT UNSIGNED,
+    `update_time` DATE,
+    PRIMARY KEY(`id`)
+);

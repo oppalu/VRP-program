@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - ltc@localhost" uuid="b62fe0e9-827e-416d-a3f8-087cc6311a10">
+    <database-info product="MySQL" version="5.7.13" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="ltc">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="AddressBook"/>
+      <schema id="3" name="homework1"/>
+      <schema id="4" name="hotel"/>
+      <schema id="5" name="information_schema"/>
+      <schema id="6" name="j2ee"/>
+      <schema id="7" name="mysql"/>
+      <schema id="8" name="performance_schema"/>
+      <schema id="9" name="sys"/>
+      <table id="10" parent="1" name="server"/>
+      <table id="11" parent="1" name="server_list"/>
+      <table id="12" parent="1" name="template"/>
+      <column id="13" parent="10" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="14" parent="10" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(256)|0</data-type>
+      </column>
+      <column id="15" parent="10" name="alias">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="16" parent="10" name="ip">
+        <mandatory>1</mandatory>
+        <data-type>varchar(32)|0</data-type>
+      </column>
+      <column id="17" parent="10" name="host">
+        <data-type>varchar(32)|0</data-type>
+      </column>
+      <column id="18" parent="10" name="type">
+        <data-type>varchar(32)|0</data-type>
+      </column>
+      <column id="19" parent="10" name="correspond_id">
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="20" parent="10" name="os">
+        <data-type>varchar(32)|0</data-type>
+      </column>
+      <column id="21" parent="10" name="cpu">
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="22" parent="10" name="mem">
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="23" parent="10" name="disk">
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="24" parent="10" name="usage">
+        <data-type>varchar(128)|0</data-type>
+      </column>
+      <column id="25" parent="10" name="dc">
+        <data-type>varchar(64)|0</data-type>
+      </column>
+      <column id="26" parent="10" name="update_time">
+        <data-type>date|0</data-type>
+      </column>
+      <key id="27" parent="10" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="28" parent="11" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="29" parent="11" name="type">
+        <data-type>varchar(32)|0</data-type>
+      </column>
+      <column id="30" parent="11" name="server_id">
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="31" parent="11" name="template_id">
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="32" parent="11" name="update_time">
+        <data-type>date|0</data-type>
+      </column>
+      <key id="33" parent="11" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="34" parent="12" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="35" parent="12" name="controller_server_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="36" parent="12" name="subscribe_staff_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)|0</data-type>
+      </column>
+      <column id="37" parent="12" name="update_time">
+        <data-type>date|0</data-type>
+      </column>
+      <key id="38" parent="12" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>
